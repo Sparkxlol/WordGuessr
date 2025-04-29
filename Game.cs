@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,22 +11,28 @@ namespace WordGuessr
     {
         Easy,
         Medium,
-        Hard
+        Hard,
+        Custom
     }
 
     // Plan to inherit from: TimedGame, CustomGame, etc.
-    internal class Game
+    abstract internal class Game
     {
-        public Word ActiveWord { get; private set; }
-        public virtual string Type { get; private set; } = "Default";
-        public DifficultyType Difficulty { get; private set; }
-        public int Round { get; private set; } = 0;
-        public bool Complete { get; private set; } = false;
+        public Word ActiveWord { get; protected set; }
+        public virtual string Type { get; protected set; } = "Default";
+        public DifficultyType Difficulty { get; protected set; }
+        public int Round { get; protected set; } = 0;
+        public bool Complete { get; protected set; } = false;
+        public bool Victory { get; protected set; } = false;
+        public DateTime CreationDate { get; private set; }
 
-        public Game(DifficultyType difficulty)
+        public const int TotalRounds = 6;
+
+        // ActiveWord should always be assigned in subclasses.
+        protected Game()
         {
-            Difficulty = difficulty;
-            ActiveWord = new Word(ChooseWordFromDifficulty(Difficulty)); 
+            ActiveWord = new Word("placeholder");
+            CreationDate = DateTime.Now;
         }
 
         // Returns null if word not same length.
@@ -45,7 +52,8 @@ namespace WordGuessr
                 }
             }
 
-            Complete = roundCompleted || Round == 5;
+            Complete = roundCompleted || Round == TotalRounds - 1;
+            Victory = roundCompleted;
             Round++;
 
             return comparison;
@@ -54,8 +62,8 @@ namespace WordGuessr
         // Going to need to implement this better.
         public static string ChooseWordFromDifficulty(DifficultyType difficulty)
         {
-            string[] easyWords = { "frogs", "heard", "place", "throw" };
-            string[] mediumWords = { "gauge", "loops", "mauve", "blimp" };
+            string[] easyWords = { "frogs", "heard", "place", "blimp" };
+            string[] mediumWords = { "gauge", "loops", "mauve", "throw" };
             string[] hardWords = { "atoll", "epoxy", "zebra", "mummy", "ionic" };
 
             Random random = new Random();
@@ -68,9 +76,9 @@ namespace WordGuessr
                     return mediumWords[random.NextInt64() % mediumWords.Length];
                 case DifficultyType.Hard:
                     return hardWords[random.NextInt64() % hardWords.Length];
+                default:
+                    return "";
             }
-
-            return "";
         }
     }
 }

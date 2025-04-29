@@ -26,7 +26,7 @@ namespace WordGuessr
         {
             InitializeComponent();
 
-            game = new Game(DifficultyType.Easy);
+            game = new DefaultGame(DifficultyType.Easy);
             Debug.WriteLine(game.ActiveWord.ChosenWord);
 
             panels = [Layer0, Layer1, Layer2, Layer3, Layer4, Layer5];
