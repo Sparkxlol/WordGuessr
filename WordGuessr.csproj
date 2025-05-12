@@ -8,4 +8,19 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\failure.mp3" />
+    <None Remove="Assets\loss.mp3" />
+    <None Remove="Assets\success.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\loss.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\success.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

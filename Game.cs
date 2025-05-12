@@ -40,7 +40,7 @@ namespace WordGuessr
         {
             if (word.Length != ActiveWord.ChosenWord.Length || Complete)
                 return null;
-
+            word = word.ToUpper();
             LetterType[] comparison = ActiveWord.CompareWords(word);
             bool roundCompleted = true;
 

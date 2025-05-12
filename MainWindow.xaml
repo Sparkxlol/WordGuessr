@@ -6,65 +6,81 @@
         xmlns:local="clr-namespace:WordGuessr"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" PreviewKeyDown="Window_PreviewKeyDown">
+
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="MaxLength" Value="1"/>
+            <Setter Property="Margin" Value="5, 5"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
+        <Viewbox Stretch="Uniform">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
 
-        <StackPanel x:Name="Layer0" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-        </StackPanel>
+            <StackPanel x:Name="Layer0" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+            </StackPanel>
 
-        <StackPanel x:Name="Layer1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-        </StackPanel>
+            <StackPanel x:Name="Layer1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+            </StackPanel>
 
-        <StackPanel x:Name="Layer2" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-        </StackPanel>
+            <StackPanel x:Name="Layer2" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+            </StackPanel>
 
-        <StackPanel x:Name="Layer3" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-        </StackPanel>
+            <StackPanel x:Name="Layer3" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+            </StackPanel>
 
-        <StackPanel x:Name="Layer4" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-        </StackPanel>
+            <StackPanel x:Name="Layer4" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+            </StackPanel>
 
-        <StackPanel x:Name="Layer5" Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-            <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown" MaxLength="1" Width="100"></TextBox>
-        </StackPanel>
-
-        <Button x:Name="GoButton" Grid.Row="6" Click="GoButton_Click" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center">Go</Button>
-    </Grid> 
+            <StackPanel x:Name="Layer5" Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+                <TextBox TextChanged="LetterTextBox_TextChanged" PreviewKeyDown="LetterTextBox_PreviewKeyDown"></TextBox>
+            </StackPanel>
+                <Button x:Name="GoButton" Grid.Row="6" Click="GoButton_Click" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center">Go</Button>
+            </Grid>
+        </Viewbox>
+        <Canvas x:Name="ConfettiCanvas" IsHitTestVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Panel.ZIndex="100" />
+    </Grid>
 </Window>

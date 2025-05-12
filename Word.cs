@@ -21,7 +21,7 @@ namespace WordGuessr
 
         public Word(string word)
         {
-            ChosenWord = word;
+            ChosenWord = word.ToUpper();
 
             foreach (char c in ChosenWord)
             {
@@ -52,6 +52,7 @@ namespace WordGuessr
             for (int i = 0; i < word.Length; i++)
             {
                 if (ChosenWord[i] != word[i])
+
                 {
                     // If there are remaining letters in givenWord equal to ChosenWord[i]
                     if (remainingLetters.GetValueOrDefault(word[i]) > 0)
